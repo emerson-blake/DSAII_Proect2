@@ -1,10 +1,12 @@
 /*
- * main.cpp
+ * simulator.hpp
+ *
+ *
  */
 
-#include <iostream>
+#define SIMULATOR_HPP
+#ifndef SIMULATOR_HPP
 
-#include "simulator.hpp"
 #include "director.hpp"
 #include "intervalcalculator.hpp"
 #include "queue.hpp"
@@ -12,9 +14,9 @@
 #include "heap.hpp"
 #include "event.hpp"
 
-int main(){
-	std::cout << "Hello World!\n";
-	return 0;
-}
+class Simulator{
+public:
+private:
+};
 
-
+#endif
