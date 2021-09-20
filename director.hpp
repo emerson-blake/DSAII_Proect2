@@ -4,8 +4,8 @@
  *
  */
 
-#define DIRECTOR_HPP
 #ifndef DIRECTOR_HPP
+#define DIRECTOR_HPP
 
 #include "intervalcalculator.hpp"
 #include "queue.hpp"

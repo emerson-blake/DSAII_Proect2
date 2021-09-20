@@ -4,13 +4,13 @@
  *
  */
 
-#define CUSTOMER_HPP
 #ifndef CUSTOMER_HPP
+#define CUSTOMER_HPP
 
 class Customer{
 public:
-	Customer()
-	~Customer()
+	Customer();
+	~Customer();
 	void  setArrivalTime(float arrivalTime);
 	void  setStartOfServiceTime(float startOfServiceTime);
 	void  setDepartureTime(float departureTime);

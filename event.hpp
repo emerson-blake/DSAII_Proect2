@@ -4,13 +4,13 @@
  *
  */
 
-#define EVENT_HPP
 #ifndef EVENT_HPP
+#define EVENT_HPP
 
 class Event{
 public:
-	Event()
-	~Event()
+	Event();
+	~Event();
 	void  setType(bool type);
 	void  setTime(float time);
 	bool  isArrival();

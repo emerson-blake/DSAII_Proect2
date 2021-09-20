@@ -4,8 +4,8 @@
  *
  */
 
-#define SIMULATOR_HPP
 #ifndef SIMULATOR_HPP
+#define SIMULATOR_HPP
 
 #include "director.hpp"
 #include "intervalcalculator.hpp"

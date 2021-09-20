@@ -2,6 +2,8 @@
  * customer.cpp
  */
 
+#include "customer.hpp"
+
 Customer::Customer(){
 
 }
