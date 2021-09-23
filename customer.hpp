@@ -10,20 +10,25 @@
 class Customer{
 public:
 	Customer();
+	Customer(float arrivalTime);
 	~Customer();
 	void  setArrivalTime(float arrivalTime);
 	void  setStartOfServiceTime(float startOfServiceTime);
 	void  setDepartureTime(float departureTime);
-	void  setNextCust(Customer* nextCust);
+	void  setNext(Customer* next);
+	void  setPrevious(Customer* previous);
+	float getPriorityValue();		// used in priority queue
 	float getArrivalTime();
 	float getStartOfServiceTime();
 	float getDepartureTime();
-	Customer* getNextCust();
+	Customer* getNext();		// used in FIFO queue
+	Customer* getPrevious();
 private:
 	float arrivalTime;
 	float startOfServiceTime;
 	float departureTime;
-	Customer* nextCust;
+	Customer* next;			// used in FIFO queue
+	Customer* previous;		// used in FIFO queue
 };
 
 #endif

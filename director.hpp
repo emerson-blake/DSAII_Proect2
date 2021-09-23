@@ -7,11 +7,10 @@
 #ifndef DIRECTOR_HPP
 #define DIRECTOR_HPP
 
-#include "intervalcalculator.hpp"
+#include "scheduler.hpp"
 #include "queue.hpp"
-#include "customer.hpp"
 #include "heap.hpp"
-#include "event.hpp"
+#include "customer.hpp"
 
 class Director{
 public:

@@ -7,7 +7,7 @@
 #ifndef HEAP_HPP
 #define HEAP_HPP
 
-#include "event.hpp"
+#include "customer.hpp"
 
 class Heap{
 public:

@@ -8,11 +8,11 @@
 #define SIMULATOR_HPP
 
 #include "director.hpp"
-#include "intervalcalculator.hpp"
+#include "scheduler.hpp"
+#include "statistician.hpp"
 #include "queue.hpp"
-#include "customer.hpp"
 #include "heap.hpp"
-#include "event.hpp"
+#include "customer.hpp"
 
 class Simulator{
 public:

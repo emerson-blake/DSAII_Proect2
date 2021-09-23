@@ -9,9 +9,18 @@
 
 #include "customer.hpp"
 
-class Queue{
+class Queue{	// FIFO
 public:
+	Queue();
+	~Queue();
+	void enqueue(Customer* customer);
+	Customer* serve();
 private:
+	bool isEmpty();
+	Customer* head;
+	Customer* tail;
 };
 
 #endif
+
+
