@@ -64,7 +64,7 @@ void Heap::percolateDown(int slot){		// modified from PowerPoint slide.
 }
 
 void Heap::percolateUp(Customer* customer){	// modified from PowerPoint slide.
-	array[0] = customer;
+	arr[0] = customer;
 	int slot = ++theSize;
 	while(customer->getPriorityValue() < arr[slot/2]->getPriorityValue()){
 		arr[slot] = arr[slot/2];
