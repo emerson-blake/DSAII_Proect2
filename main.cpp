@@ -16,23 +16,17 @@
 
 int main(){
 
-	srand(time(0));
+	Scheduler scheduler;
+	float avg = 5;
+	float total = 0;
+	int trials = 5000;
 
-	Heap heap;
-		
-	Customer* customers[10];
-	for(int i=0; i<10; i++){
-		customers[i] = new Customer(rand());
-		heap.percolateUp(customers[i]);
-	}
+	for (int i=0; i<trials; i++)
+		total += scheduler.getNextRandomInterval(avg);
+	
+	avg = total / trials;
 
-	for(int i=0; i<10; i++){
-		std::cout << heap.deleteMin()->getPriorityValue() << std::endl;
-	}
-
-	for(int i=0; i<10; i++){
-		delete customers[i];
-	}
+	std::cout << avg << std::endl;
 
 	return 0;
 }
