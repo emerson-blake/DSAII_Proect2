@@ -13,14 +13,15 @@ public:
 	void startIdle(float eventTime);
 	void stopIdle(float eventTime);
 
-	float calculatePercentIdleTime(int lamda, int mu, int M);	// Analytical & Simulated
-	float calculateAvgCustomersInSystem(int lamda, int mu, int M);	// Analytical
-	float calculateAvgTimeSpentInSystem(int lamda, int mu, int M);	// Analytical & Simulated
-	float calculateAvgCustomersWaiting(int lamda, int mu, int M);	// Analytical
-	float calculateAvgTimeSpentWaiting(int lamda, int mu, int M);	// Analytical & Simulated
-	float calculateUtilizationFactor(int lamda, int mu, int M);	// Analytical & Simulated
+	float calculatePercentIdleTime(int lambda, int mu, int M);	// Analytical & Simulated
+	float calculateAvgCustomersInSystem(int lambda, int mu, int M);	// Analytical
+	float calculateAvgTimeSpentInSystem(int lambda, int mu, int M);	// Analytical & Simulated
+	float calculateAvgCustomersWaiting(int lambda, int mu, int M);	// Analytical
+	float calculateAvgTimeSpentWaiting(int lambda, int mu, int M);	// Analytical & Simulated
+	float calculateUtilizationFactor(int lambda, int mu, int M);	// Analytical & Simulated
+	float calculateWaitProbability(int N);				// Simulated
 
-	void showSimulationResults();
+	void showSimulationResults(int lambda, int mu, int M, int N);
 private:
 	int customersWaitedCnt;
 	float totalWaitTime;

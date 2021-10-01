@@ -16,9 +16,9 @@ public:
 	Heap();
 	~Heap();
 	bool isEmpty();
-	Customer* findMin();			// empty definition
+//	Customer* findMin();			// empty definition
 	Customer* deleteMin();			// this IS the serve/dequeue function
-	void makeEmpty();			// empty definition
+//	void makeEmpty();			// empty definition
 	void constructHeap(Customer** v, int vSize);
 	void buildHeap();
 	void percolateDown(int slot);

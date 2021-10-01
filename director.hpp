@@ -15,7 +15,7 @@
 
 class Director{
 public:
-	Director(int arrivalsPerUnit, int serverdPerUnit, int totalServers, int totalEvents);
+	Director(int arrivalsPerUnit, int serverdPerUnit, int totalServers, int totalCustomers);
 	~Director();
 
 	void loadArrivals();
@@ -32,8 +32,9 @@ private:
 	int availableServers;
 	int arrivalsPerUnit;		// lambda
 	int servedPerUnit;		// mu
-	int totalEvents;		// n
+	int totalCustomers;		// N
 	int processedEvents;
+	int customersArrived;
 };
 
 #endif

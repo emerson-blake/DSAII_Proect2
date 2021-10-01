@@ -2,6 +2,8 @@
  * heap.cpp
  */
 
+#include <iostream>
+
 #include "heap.hpp"
 #include "customer.hpp"
 
@@ -20,9 +22,9 @@ bool Heap::isEmpty(){
 	return !theSize;	// if theSize == 0, returns true; if theSize > 0, returns false
 }
 
-Customer* Heap::findMin(){ // PowerPoint slide declared this but didn't define it.
-
-}
+//Customer* Heap::findMin(){ // PowerPoint slide declared this but didn't define it.
+//
+//}
 
 Customer* Heap::deleteMin(){			// modified from PowerPoint slide.
 	Customer* tmp = arr[1];
@@ -31,9 +33,9 @@ Customer* Heap::deleteMin(){			// modified from PowerPoint slide.
 	return tmp;
 }
 
-void Heap::makeEmpty(){	// PowerPoint slide declared this but didn't define it.
-
-}
+//void Heap::makeEmpty(){	// PowerPoint slide declared this but didn't define it.
+//
+//}
 
 void Heap::constructHeap(Customer** v, int vSize){	// modified from PowerPoint slide.
 	for(int i=0; i<vSize; i++)
@@ -82,5 +84,11 @@ int Heap::getMaxSize(){
 }
 
 float Heap::getNextArrivalTime(){
-	//TODO: iterate through heap, check if arrival, return first arrival time
+
+	for(int i=1; i<theSize+1; i++)		// assumption is that there will always be at least 1 arrival when this function is called
+		if(arr[i]->isArrival())
+			return arr[i]->getArrivalTime();
+
+	std::cout << "ERROR: no arrivals remaining. could not getNextArrivalTime()\n";
+	return -1.0;	// did not find arrival;	this should never happen in simulation
 }

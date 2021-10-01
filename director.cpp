@@ -2,6 +2,8 @@
  * director.cpp
  */
 
+#include <iostream>
+
 #include "director.hpp"
 #include "queue.hpp"
 #include "heap.hpp"
@@ -9,13 +11,14 @@
 #include "statistician.hpp"
 
 
-Director::Director(int arrivalsPerUnit, int servedPerUnit, int totalServers, int totalEvents){
+Director::Director(int arrivalsPerUnit, int servedPerUnit, int totalServers, int totalCustomers){
 	this->arrivalsPerUnit = arrivalsPerUnit;
 	this->servedPerUnit = servedPerUnit;
 	this->totalServers = totalServers;
-	this->totalEvents = totalEvents;
+	this->totalCustomers = totalCustomers;
 
 	availableServers = totalServers;
+	customersArrived = 0;
 }
 
 Director::~Director(){
@@ -43,11 +46,11 @@ void Director::processEvents(){
 	loadArrivals();
 	while (!eventQueue.isEmpty()) {
 		processNextEvent();
-		if (processedEvents < totalEvents && eventQueue.getTheSize() <= totalServers+1) {
+		if (processedEvents < totalCustomers && eventQueue.getTheSize() <= totalServers+1) {
 			loadArrivals();
 		}
 	}
-	statistician.showSimulationResults();
+	statistician.showSimulationResults(arrivalsPerUnit, servedPerUnit, totalServers, totalCustomers);
 }
 
 void Director::processNextEvent(){
@@ -55,12 +58,16 @@ void Director::processNextEvent(){
 	float eventTime = customer->getPriorityValue();
 
 	if (customer->isArrival()) {
+
+		std::cout << "Customer " << ++customersArrived << " has arrived.\n";
+
 		if (availableServers > 0)
 			startServingCustomer(customer, eventTime);
 		else
 			waitQueue.enqueue(customer);
 	}
 	else {
+		processedEvents++;
 		statistician.processCustomerStats(customer);
 		if(++availableServers == totalServers)
 			statistician.startIdle(eventTime);
