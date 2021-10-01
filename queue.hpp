@@ -15,8 +15,8 @@ public:
 	~Queue();
 	void enqueue(Customer* customer);
 	Customer* serve();
-private:
 	bool isEmpty();
+private:
 	Customer* head;
 	Customer* tail;
 };

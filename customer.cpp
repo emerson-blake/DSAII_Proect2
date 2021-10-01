@@ -8,16 +8,16 @@
 
 Customer::Customer(){
 	arrivalTime = 0;
-	startOfServiceTime = -1;
-	departureTime = -1;
+	startOfServiceTime = 0;
+	departureTime = 0;
 	next = nullptr;
 	previous = nullptr;
 }
 
 Customer::Customer(float arrivalTime){
 	this->arrivalTime = arrivalTime;
-	startOfServiceTime = -1;
-	departureTime = -1;
+	startOfServiceTime = 0;
+	departureTime = 0;
 	next = nullptr;
 	previous = nullptr;
 }
@@ -44,6 +44,10 @@ void Customer::setNext(Customer* next){
 
 void Customer::setPrevious(Customer* previous){
 	this->previous = previous;
+}
+
+bool Customer::isArrival(){
+	return !departureTime;
 }
 
 float Customer::getPriorityValue(){

@@ -72,3 +72,15 @@ void Heap::percolateUp(Customer* customer){	// modified from PowerPoint slide.
 	}
 	arr[slot] = customer;
 }
+
+int Heap::getTheSize(){
+	return theSize;
+}
+
+int Heap::getMaxSize(){
+	return maxSize;
+}
+
+float Heap::getNextArrivalTime(){
+	//TODO: iterate through heap, check if arrival, return first arrival time
+}

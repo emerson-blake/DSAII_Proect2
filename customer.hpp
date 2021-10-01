@@ -17,6 +17,7 @@ public:
 	void  setDepartureTime(float departureTime);
 	void  setNext(Customer* next);
 	void  setPrevious(Customer* previous);
+	bool  isArrival();
 	float getPriorityValue();		// used in priority queue
 	float getArrivalTime();
 	float getStartOfServiceTime();

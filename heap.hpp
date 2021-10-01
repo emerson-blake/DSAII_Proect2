@@ -23,7 +23,11 @@ public:
 	void buildHeap();
 	void percolateDown(int slot);
 	void percolateUp(Customer* customer);	// this IS the insert/enqueue function
+	int  getTheSize();
+	int  getMaxSize();
+	float getNextArrivalTime();
 private:
+	int maxSize = MAXSIZE;
 	int theSize = 0;
 	Customer* arr[MAXSIZE+1];
 };
