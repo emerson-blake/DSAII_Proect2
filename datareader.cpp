@@ -1,15 +1,24 @@
-/*
- * datareader.cpp
- */
+/************************************************
+ * Student Name:	Blake Emerson
+ * File Name:		"datareader.cpp"
+ * Assignment Number:	Project 2: Customer/Service Simulator - Due 10/07/2021
+ * 
+ * Definitions of class DataReader's member functions
+ * 
+*/
+
 
 #include <iostream>
 #include <string>
 
 #include "datareader.hpp"
 
-DataReader::DataReader(){
 
-}
+/*
+ * openFile()
+ * takes string input, opens file of that name
+ * prints error if can't open
+ */
 
 bool DataReader::openFile(const char* fileName){
 	inFS.open(fileName);
@@ -20,10 +29,22 @@ bool DataReader::openFile(const char* fileName){
 	return 1;
 }
 
+
+/*
+ * closeFile()
+ * if filestream has open file, closes it
+ */
+
 void DataReader::closeFile(){
 	if(inFS.is_open())
 		inFS.close();
 }
+
+
+/*
+ * readParameters()
+ * reads each line from file, stores data into parameter addresses
+ */
 
 void DataReader::readParameters(int* lambda, int* mu, int* M, int* N){
 	int* pointers[] = {lambda, mu, M, N};

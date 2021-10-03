@@ -1,8 +1,13 @@
-/*
- * queue.hpp
- *
- *
- */
+/************************************************
+ * Student Name:	Blake Emerson
+ * File Name:		"queue.hpp"
+ * Assignment Number:	Project 2: Customer/Service Simulator - Due 10/07/2021
+ * 
+ * Definition of class Queue
+ * acts as FIFO queue of Customer class objects
+ * doubly-linked list
+*/
+
 
 #ifndef QUEUE_HPP
 #define QUEUE_HPP

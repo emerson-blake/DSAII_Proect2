@@ -1,7 +1,12 @@
-/*
- * heap.hpp
+/************************************************
+ * Student Name:	Blake Emerson
+ * File Name:		"heap.hpp"
+ * Assignment Number:	Project 2: Customer/Service Simulator - Due 10/07/2021
  *
- *
+ * Definition of class Heap
+ * Used as priority queue of Customer objects
+ * Manages data in array
+ * Performs organization to maintain heap requirements
  */
 
 #ifndef HEAP_HPP
@@ -16,16 +21,14 @@ public:
 	Heap();
 	~Heap();
 	bool isEmpty();
-//	Customer* findMin();			// empty definition
 	Customer* deleteMin();			// this IS the serve/dequeue function
-//	void makeEmpty();			// empty definition
 	void constructHeap(Customer** v, int vSize);
 	void buildHeap();
 	void percolateDown(int slot);
 	void percolateUp(Customer* customer);	// this IS the insert/enqueue function
 	int  getTheSize();
 	int  getMaxSize();
-	float getNextArrivalTime();
+	float getLastArrivalTime();
 private:
 	int maxSize = MAXSIZE;
 	int theSize = 0;
