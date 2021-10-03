@@ -218,7 +218,6 @@ float Calculator::simulated_AvgTimeSpentInSystem(int N){
  */
 
 float Calculator::simulated_AvgTimeSpentWaiting(int N){
-	std::cout << "totalWaitTime: " << totalWaitTime << std::endl;
 	return totalWaitTime / N;
 }
 

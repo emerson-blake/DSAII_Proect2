@@ -42,7 +42,6 @@ private:
 	int arrivalsLoaded;		// accumulates loaded arrivals so loadArrivals() doesn't load more than totalCustomers
 
 	// private member functions
-	float getNextArrivalTime();	
 	void loadArrivals();
 	void processEvents();
 	void processNextEvent();
